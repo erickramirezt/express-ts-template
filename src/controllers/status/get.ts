@@ -1,11 +1,7 @@
-import { type Response, type NextFunction, type Request } from 'express'
 import { StatusCodes } from 'http-status-codes'
+import { type Controller } from '../index'
 
-export const getStatus = (
-  _: Request,
-  res: Response,
-  next: NextFunction
-): void => {
+export const getStatus: Controller = (_, res, next) => {
   try {
     res.status(StatusCodes.OK).send()
   } catch (error) {
