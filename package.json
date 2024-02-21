@@ -8,7 +8,9 @@
     "start": "node build/server.js",
     "dev": "ts-node-dev src/server.ts",
     "test:init": "ts-jest config:init",
-    "test": "jest --verbose --coverage",
+    "test:unit": "jest tests/modules  --verbose --coverage",
+    "test:features": "jest tests/app --verbose --coverage",
+    "test": "npm run test:unit && npm run test:features",
     "format": "npx prettier . --write"
   },
   "keywords": [],
