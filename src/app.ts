@@ -1,7 +1,7 @@
 import express from 'express'
 import cors from 'cors'
-import { loadApiEndpoints } from './routes/api'
-import { errorHandler, notFound } from './middlewares'
+import { loadApiEndpoints } from './app/routes'
+import { errorHandler, notFound } from './app/middlewares'
 
 const app = express()
 

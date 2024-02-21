@@ -1,6 +1,6 @@
 import { type NextFunction, type Request, type Response } from 'express'
 import { StatusCodes } from 'http-status-codes'
-import { type CustomApiError } from '../modules/shared/domain/errors'
+import { type CustomApiError } from '../../modules/shared/domain/errors'
 
 export const errorHandler = (
   error: CustomApiError,

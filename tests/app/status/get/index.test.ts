@@ -1,7 +1,7 @@
-import { API_BASE_URL } from '../../../../src/constants/api-routes'
-import { api } from '../../../helpers/api-test'
 import { StatusCodes } from 'http-status-codes'
+import { BASE_API_ROUTE } from '../../../../src/app/constants'
+import { api } from '../../shared'
 
 test('get api status', async () => {
-  await api.get(API_BASE_URL).expect(StatusCodes.OK)
+  await api.get(BASE_API_ROUTE).expect(StatusCodes.OK)
 })
