@@ -3,7 +3,7 @@ import { StatusCodes } from 'http-status-codes'
 
 export const NOT_FOUND_MESSAGE = 'Resource Not Found'
 
-export const notFound = (_: Request, res: Response): void => {
+export const notFoundHandlerMiddleware = (_: Request, res: Response): void => {
   res.status(StatusCodes.NOT_FOUND).json({
     error: NOT_FOUND_MESSAGE
   })
