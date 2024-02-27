@@ -1,4 +1,6 @@
-export class InvalidUuidError extends Error {
+import { InternalServerError } from '../../errors/internal-server-error'
+
+export class InvalidUuidError extends InternalServerError {
   constructor (value: string) {
     super(InvalidUuidError.message(value))
     this.name = 'InvalidUuidError'
