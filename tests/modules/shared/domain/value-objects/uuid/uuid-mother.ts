@@ -1,6 +1,6 @@
 import { Uuid } from '../../../../../../src/modules/shared/domain/value-objects/uuid/uuid'
 import { MotherCreator } from '../mother-creator/mother-creator'
-import { WordMother } from '../mother-creator/word/word-mother'
+import { StringMother } from '../mother-creator/string/string-mother'
 
 export const UuidMother = {
   create (value: string) {
@@ -8,10 +8,10 @@ export const UuidMother = {
   },
 
   random () {
-    return this.create(MotherCreator.uuid())
+    return this.create(MotherCreator.string.uuid())
   },
 
   invalidUuid () {
-    return WordMother.random({ max: 10 })
+    return StringMother.word({ max: 10 })
   }
 }
