@@ -2,8 +2,6 @@ import { BadRequestError } from '../../errors/bad-request-error'
 
 export type Primitives = string | number | boolean | Date
 
-// type Optional<T> = T | undefined | null
-
 export abstract class ValueObject<T extends Primitives> {
   constructor (readonly value: T) {
     this.validateValue(value)
