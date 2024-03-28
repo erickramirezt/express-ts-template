@@ -7,7 +7,7 @@ export const UuidMother = {
     return new Uuid(value ?? MotherCreator.string.uuid())
   },
 
-  invalidUuid () {
+  createInvalid () {
     return StringMother.word({ max: 10 })
   }
 }

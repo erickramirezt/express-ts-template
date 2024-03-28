@@ -20,11 +20,11 @@ export abstract class ValueObject<T extends Primitives> {
 
   private validateValue (value: T): void {
     if (value === undefined || value === null) {
-      throw new BadRequestError(this.invalidValueMessage(value))
+      throw new BadRequestError(ValueObject.invalidValueMessage())
     }
   }
 
-  invalidValueMessage (value: T): string {
-    return `El valor [${value.toString()}] no es un valor válido.`
+  private static invalidValueMessage (): string {
+    return 'El valor ingresado no está definido.'
   }
 }
