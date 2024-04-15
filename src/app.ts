@@ -1,8 +1,8 @@
 import express from 'express'
 import cors from 'cors'
-import { loadApiEndpoints } from './app/routes/load-api-endpoints'
-import { notFoundHandlerMiddleware } from './app/middlewares/not-found-handler-middleware'
-import { errorHandlerMiddleware } from './app/middlewares/error-handler-middleware'
+import { loadApiEndpoints } from './app/shared/routes/load-api-endpoints'
+import { notFoundHandlerMiddleware } from './app/shared/middlewares/not-found-handler-middleware'
+import { errorHandlerMiddleware } from './app/shared/middlewares/error-handler-middleware'
 
 const app = express()
 

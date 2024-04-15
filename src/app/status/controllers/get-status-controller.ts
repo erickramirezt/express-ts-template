@@ -1,5 +1,5 @@
 import { StatusCodes } from 'http-status-codes'
-import { type Controller } from '../controller'
+import { type Controller } from '../../shared/controllers/controller'
 
 export const getStatusController: Controller = (_, res, next) => {
   try {
