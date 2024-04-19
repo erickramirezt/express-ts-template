@@ -4,7 +4,9 @@ export type Primitives = string | number | boolean | Date
 
 export abstract class ValueObject<T extends Primitives> {
   constructor (readonly value: T) {
-    this.validateValue(value)
+    if (!this.isValueValid(value)) {
+      throw new BadRequestError(ValueObject.invalidValueMessage())
+    }
   }
 
   equals (other: ValueObject<T>): boolean {
@@ -18,13 +20,11 @@ export abstract class ValueObject<T extends Primitives> {
     return this.value.toString()
   }
 
-  private validateValue (value: T): void {
-    if (value === undefined || value === null) {
-      throw new BadRequestError(ValueObject.invalidValueMessage())
-    }
+  private isValueValid (value: T): boolean {
+    return value !== undefined && value !== null
   }
 
-  private static invalidValueMessage (): string {
+  static invalidValueMessage (): string {
     return 'El valor ingresado no está definido.'
   }
 }
