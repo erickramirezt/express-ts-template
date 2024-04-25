@@ -1,6 +1,6 @@
 import test, { APIRequestContext, expect } from '@playwright/test'
 
-import { baseApiRoute } from '../../../../src/app/shared/routes/load-api-endpoints'
+import { baseApiRoute } from '../../../../src/app/shared/routes/routes'
 import { getContext } from '../../shared/api/api-test'
 
 let api: APIRequestContext
