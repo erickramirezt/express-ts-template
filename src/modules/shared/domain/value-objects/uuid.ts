@@ -16,7 +16,7 @@ export class Uuid extends StringValueObject {
 
 	private validateUuid(value: string): void {
 		if (!Uuid.isValid(value)) {
-			throw new InvalidUuidError()
+			throw new InvalidUuidError(value)
 		}
 	}
 }

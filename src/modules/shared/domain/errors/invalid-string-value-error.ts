@@ -1,8 +1,10 @@
 import { BadRequestError } from './bad-request-error'
 
 export class InvalidStringValueError extends BadRequestError {
-	static message = 'El valor ingresado no es una cadena de texto válida.'
-	constructor() {
-		super(InvalidStringValueError.message)
-	}
+  static message({ value }: { value: string }) {
+    return `El valor [${value}] no es una cadena de texto válida.`
+  }
+  constructor(readonly value: string) {
+    super(InvalidStringValueError.message({value}))
+  }
 }

@@ -13,7 +13,7 @@ export abstract class StringValueObject extends ValueObject<string> {
 
 	private validateString(value: string): void {
 		if (!StringValueObject.isValid(value)) {
-			throw new InvalidStringValueError()
+			throw new InvalidStringValueError(value)
 		}
 	}
 }

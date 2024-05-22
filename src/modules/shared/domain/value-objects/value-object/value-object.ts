@@ -18,7 +18,7 @@ export abstract class ValueObject<T extends Primitives> {
 
 	private validateValue(value: T): void {
 		if (!this.isValueValid(value)) {
-			throw new InvalidValueError()
+			throw new InvalidValueError(value.toString())
 		}
 	}
 
