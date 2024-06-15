@@ -5,7 +5,7 @@ export class InvalidStringValueError extends BadRequestError {
 		super(InvalidStringValueError.message({ value }))
 	}
 
-	static message({ value }: { value: string }): string {
-		return `El valor [${value}] no es una cadena de texto válida.`
+	static message(params: { value: string }): string {
+		return `El valor [${params.value}] no es una cadena de texto válida.`
 	}
 }

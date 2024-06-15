@@ -5,7 +5,7 @@ export class InvalidUuidError extends InternalServerError {
 		super(InvalidUuidError.message({ value }))
 	}
 
-	static message({ value }: { value: string }): string {
-		return `El valor [${value}] no es un UUID válido.`
+	static message(params: { value: string }): string {
+		return `El valor [${params.value}] no es un UUID válido.`
 	}
 }
